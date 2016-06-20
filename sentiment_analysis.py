@@ -189,7 +189,7 @@ def computeSumSquaredErrors(reviews,words):
 
 
 
-def main():
+def main(argv):
     
     # Os arquivos sao passados como argumentos da linha de comando para o programa
     # Voce deve buscar mais informacoes sobre o funcionamento disso (e' parte do
@@ -205,10 +205,10 @@ def main():
         sys.exit(0)
     
     # Lendo conjunto de treinamento e computando escore das palavras
-    words = readTrainingSet(sys.argv[1])
+    words = readTrainingSet(str(sys.argv[1]))
     #words = readTrainingSet("trainSet.txt")
     # Lendo conjunto de teste
-    reviews = readTestSet(sys.argv[2])
+    reviews = readTestSet(str(sys.argv[2]))
     #reviews = readTestSet("testSet.txt")
     # Inferindo sentimento e computando soma dos quadrados dos erros
     sse = computeSumSquaredErrors(reviews,words)
@@ -217,6 +217,6 @@ def main():
     os.system("Pause")
 
 if __name__ == '__main__':
-   main()
+   main(sys.argv)
 
     
